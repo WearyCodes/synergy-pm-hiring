@@ -1,0 +1,27 @@
+{"ts":"2026-05-28T15:54:36.443Z","cmd":"goto","args":"https://syn-grp.com/","origin":"https://syn-grp.com/","durationMs":3415,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:54:36.567Z","cmd":"text","args":"","origin":"https://syn-grp.com/","durationMs":3,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:54:42.185Z","cmd":"goto","args":"https://syn-grp.com/about","origin":"https://syn-grp.com/","durationMs":175,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:54:42.305Z","cmd":"text","args":"","origin":"https://syn-grp.com/","durationMs":2,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:54:48.807Z","cmd":"goto","args":"https://syn-grp.com/about/","origin":"https://syn-grp.com/","durationMs":200,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:54:48.970Z","cmd":"snapshot","args":"-i","origin":"https://syn-grp.com/","durationMs":37,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:54:49.072Z","cmd":"html","args":"","origin":"https://syn-grp.com/","durationMs":2,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:54:55.227Z","cmd":"goto","args":"https://syn-grp.com/careers/","origin":"https://syn-grp.com/careers/","durationMs":245,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:54:55.334Z","cmd":"text","args":"","origin":"https://syn-grp.com/careers/","durationMs":2,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:55:00.971Z","cmd":"goto","args":"https://syn-grp.com/projects/","origin":"https://syn-grp.com/projects/","durationMs":469,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:55:01.076Z","cmd":"text","args":"","origin":"https://syn-grp.com/projects/","durationMs":6,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:55:17.502Z","cmd":"goto","args":"https://syn-grp.com/","origin":"https://syn-grp.com/","durationMs":120,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:55:18.988Z","cmd":"screenshot","args":"C:/Users/weary/AppData/Local/Temp/synergy-home.png","origin":"https://syn-grp.com/","durationMs":1385,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:55:30.103Z","cmd":"goto","args":"https://syn-grp.com/careers/","origin":"https://syn-grp.com/careers/","durationMs":153,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:55:30.449Z","cmd":"screenshot","args":"C:/Users/weary/AppData/Local/Temp/synergy-careers.png","origin":"https://syn-grp.com/careers/","durationMs":245,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:55:42.183Z","cmd":"goto","args":"https://syn-grp.com/","origin":"https://syn-grp.com/","durationMs":149,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:55:42.292Z","cmd":"js","args":"getComputedStyle(document.querySelector('header') || document.querySelector('nav') || document.body).backgroundColor","origin":"https://syn-grp.com/","durationMs":4,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:55:42.391Z","cmd":"js","args":"document.querySelector('a').style.color || getComputedStyle(document.querySelector('a')).color","origin":"https://syn-grp.com/","durationMs":1,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:55:42.488Z","cmd":"css","args":"nav a color","origin":"https://syn-grp.com/","durationMs":1,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:55:42.588Z","cmd":"css","args":"header background-color","origin":"https://syn-grp.com/","durationMs":1,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:59:39.573Z","cmd":"goto","args":"file:///C:/Users/weary/WorkCode/synergy/pm-hiring.html","origin":"file:///C:/Users/weary/WorkCode/synergy/pm-hiring.html","durationMs":42,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:59:39.918Z","cmd":"screenshot","args":"C:/Users/weary/AppData/Local/Temp/hiring-full.png","origin":"file:///C:/Users/weary/WorkCode/synergy/pm-hiring.html","durationMs":243,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T15:59:49.228Z","cmd":"responsive","args":"C:/Users/weary/AppData/Local/Temp/hiring","origin":"file:///C:/Users/weary/WorkCode/synergy/pm-hiring.html","durationMs":509,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T16:19:01.011Z","cmd":"viewport","args":"1280x900","origin":"file:///C:/Users/weary/WorkCode/synergy/pm-hiring.html","durationMs":3,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T16:19:01.142Z","cmd":"goto","args":"file:///C:/Users/weary/WorkCode/synergy/pm-hiring.html","origin":"file:///C:/Users/weary/WorkCode/synergy/pm-hiring.html","durationMs":10,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T16:19:04.358Z","cmd":"screenshot","args":"C:/Users/weary/AppData/Local/Temp/hiring-v2-top.png --clip 0,0,1280,900","origin":"file:///C:/Users/weary/WorkCode/synergy/pm-hiring.html","durationMs":3068,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-28T16:19:14.179Z","cmd":"screenshot","args":"C:/Users/weary/AppData/Local/Temp/hiring-v2-full.png","origin":"file:///C:/Users/weary/WorkCode/synergy/pm-hiring.html","durationMs":368,"status":"ok","hasCookies":false,"mode":"launched"}
