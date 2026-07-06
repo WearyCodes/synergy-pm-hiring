@@ -1,10 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0; url=pm-hiring.html" />
-  <title>Synergy Construction — Careers</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers — Synergy Construction Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #072364; --navy-deep: #041540; --navy-mid: #0d3080;
+      --green: #136949; --green-lt: #1a8a5e;
+      --sand: #f7f5f0; --border: #e4e7ed; --gray: #6b7280; --text: #111827;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--sand); color: var(--text); min-height: 100vh; }
+
+    nav {
+      background: var(--navy-deep); height: 60px;
+      display: flex; align-items: center; justify-content: space-between; padding: 0 48px;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-s { width: 30px; height: 30px; background: var(--green); border-radius: 5px; display: grid; place-items: center; font-weight: 900; font-size: 17px; color: white; font-style: italic; }
+    .nav-wordmark { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.9); }
+
+    .hero-band {
+      background: var(--navy); padding: 64px 48px; text-align: center;
+    }
+    .hero-band p { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+    .hero-band h1 { font-size: clamp(32px, 5vw, 54px); font-weight: 900; color: white; letter-spacing: -1.5px; margin-bottom: 14px; }
+    .hero-band h1 em { color: var(--green); font-style: normal; }
+    .hero-band .sub { font-size: 17px; color: rgba(255,255,255,0.6); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    .roles { max-width: 820px; margin: 0 auto; padding: 64px 24px; display: flex; flex-direction: column; gap: 20px; }
+
+    .role-card {
+      background: white; border: 1px solid var(--border); border-radius: 12px;
+      padding: 32px 36px; display: flex; align-items: center; gap: 32px;
+      text-decoration: none; transition: box-shadow 0.18s, border-color 0.18s;
+    }
+    .role-card:hover { box-shadow: 0 6px 24px rgba(7,35,100,0.1); border-color: rgba(7,35,100,0.25); }
+    .role-icon { width: 52px; height: 52px; border-radius: 10px; background: rgba(7,35,100,0.06); display: grid; place-items: center; flex-shrink: 0; font-size: 26px; }
+    .role-info { flex: 1; }
+    .role-info h2 { font-size: 20px; font-weight: 800; color: var(--navy); letter-spacing: -0.4px; margin-bottom: 6px; }
+    .role-info p { font-size: 14px; color: var(--gray); line-height: 1.6; max-width: 520px; }
+    .role-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .pill { font-size: 12px; font-weight: 500; color: var(--navy); background: rgba(7,35,100,0.07); border-radius: 4px; padding: 4px 10px; }
+    .role-arrow { color: var(--green); flex-shrink: 0; }
+
+    footer {
+      text-align: center; padding: 32px; font-size: 12px; color: #9ca3af;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: inherit; text-decoration: none; }
+    footer a:hover { color: var(--navy); }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .hero-band { padding: 48px 20px; }
+      .role-card { flex-wrap: wrap; gap: 16px; padding: 24px 20px; }
+      .roles { padding: 40px 16px; }
+    }
+  </style>
 </head>
 <body>
-  <a href="pm-hiring.html">Project Manager — Synergy Construction Group</a>
+
+<nav>
+  <a class="nav-brand" href="https://syn-grp.com/">
+    <div class="nav-s">S</div>
+    <span class="nav-wordmark">Synergy Construction Group</span>
+  </a>
+</nav>
+
+<div class="hero-band">
+  <p>We're Hiring</p>
+  <h1>Join <em>Synergy</em> Construction</h1>
+  <p class="sub">16 years building across Chicagoland. Four hands-on owners. A team that works together.</p>
+</div>
+
+<div class="roles">
+
+  <a class="role-card" href="pm-hiring.html">
+    <div class="role-icon">🏗️</div>
+    <div class="role-info">
+      <h2>Project Manager</h2>
+      <p>Own projects end-to-end across multi-family, adaptive reuse, and interior markets. Competitive salary + full benefits.</p>
+      <div class="role-pills">
+        <span class="pill">Chicago, IL</span>
+        <span class="pill">Full-Time</span>
+        <span class="pill">$85K–$130K</span>
+      </div>
+    </div>
+    <div class="role-arrow">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+  </a>
+
+  <a class="role-card" href="superintendent.html">
+    <div class="role-icon">🦺</div>
+    <div class="role-info">
+      <h2>Superintendent</h2>
+      <p>Lead the jobsite — safety, quality, schedule, and subcontractors. For experienced field leaders ready to own it.</p>
+      <div class="role-pills">
+        <span class="pill">Chicago, IL</span>
+        <span class="pill">Full-Time</span>
+        <span class="pill">$90K–$130K</span>
+      </div>
+    </div>
+    <div class="role-arrow">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+  </a>
+
+  <a class="role-card" href="admin-hiring.html">
+    <div class="role-icon">🗂️</div>
+    <div class="role-info">
+      <h2>Administrative Assistant / Receptionist</h2>
+      <p>Be the face of Synergy — managing the front desk, office operations, and admin support for our leadership team.</p>
+      <div class="role-pills">
+        <span class="pill">Chicago, IL (West Town)</span>
+        <span class="pill">Full-Time</span>
+        <span class="pill">Office &amp; Admin Background</span>
+      </div>
+    </div>
+    <div class="role-arrow">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+  </a>
+
+</div>
+
+<footer>
+  © 2026 Synergy Construction Group, LLC · <a href="https://syn-grp.com/">syn-grp.com</a>
+</footer>
+
 </body>
 </html>

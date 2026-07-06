@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administrative Assistant / Receptionist — Synergy Construction Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #072364;
+      --navy-mid:  #0d3080;
+      --navy-deep: #041540;
+      --green:     #136949;
+      --green-lt:  #1a8a5e;
+      --sand:      #f7f5f0;
+      --off-white: #fafafa;
+      --border:    #e4e7ed;
+      --gray:      #6b7280;
+      --gray-lt:   #9ca3af;
+      --text:      #111827;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      color: var(--text); line-height: 1.6; background: var(--off-white);
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      background: var(--navy-deep); height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; position: sticky; top: 0; z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-s {
+      width: 30px; height: 30px; background: var(--green); border-radius: 5px;
+      display: grid; place-items: center; font-weight: 900; font-size: 17px;
+      color: white; letter-spacing: -1px; font-style: italic;
+    }
+    .nav-wordmark { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.9); letter-spacing: 0.3px; }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+    .nav-links { list-style: none; display: flex; gap: 22px; }
+    .nav-links a {
+      font-size: 12.5px; font-weight: 500; color: rgba(255,255,255,0.6);
+      text-decoration: none; letter-spacing: 0.4px; text-transform: uppercase; transition: color 0.15s;
+    }
+    .nav-links a:hover { color: rgba(255,255,255,0.9); }
+    .nav-apply {
+      background: var(--green); color: white; font-size: 12.5px; font-weight: 600;
+      padding: 7px 18px; border-radius: 4px; text-decoration: none; letter-spacing: 0.3px; transition: background 0.15s;
+    }
+    .nav-apply:hover { background: var(--green-lt); }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--navy); position: relative; overflow: hidden; padding: 96px 48px 80px;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -80px; left: -60px;
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(19,105,73,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 980px; margin: 0 auto; position: relative;
+      display: grid; grid-template-columns: 1fr 340px; gap: 64px; align-items: start;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(19,105,73,0.2); border: 1px solid rgba(19,105,73,0.4);
+      border-radius: 100px; padding: 5px 14px 5px 8px; margin-bottom: 24px;
+    }
+    .hero-badge-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--green);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .hero-badge span { font-size: 12px; font-weight: 600; color: #4ade80; letter-spacing: 0.5px; }
+    .hero h1 {
+      font-size: clamp(32px, 4.5vw, 50px); font-weight: 900; color: white;
+      line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 8px;
+    }
+    .hero-role-line {
+      font-size: clamp(32px, 4.5vw, 50px); font-weight: 900; color: var(--green);
+      line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 24px; font-style: italic;
+    }
+    .hero-desc {
+      font-size: 17px; color: rgba(255,255,255,0.7); line-height: 1.75; max-width: 520px; margin-bottom: 36px;
+    }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 6px; padding: 6px 14px; font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 500;
+    }
+    .pill svg { opacity: 0.6; }
+    .hero-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px; padding: 28px; backdrop-filter: blur(8px);
+    }
+    .hero-card h3 { font-size: 14px; font-weight: 700; color: white; margin-bottom: 6px; }
+    .hero-card p { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 20px; line-height: 1.6; }
+    .card-cta {
+      display: block; text-align: center; background: var(--green); color: white;
+      font-size: 14px; font-weight: 700; padding: 13px; border-radius: 6px;
+      text-decoration: none; transition: background 0.15s;
+    }
+    .card-cta:hover { background: var(--green-lt); }
+    .card-detail {
+      margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .card-detail-row { display: flex; justify-content: space-between; font-size: 12.5px; }
+    .card-detail-row .lbl { color: rgba(255,255,255,0.4); }
+    .card-detail-row .val { color: rgba(255,255,255,0.85); font-weight: 600; }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 80px 48px; }
+    .inner { max-width: 980px; margin: 0 auto; }
+    .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+    h2.section-title { font-size: clamp(28px, 3.5vw, 40px); font-weight: 900; color: var(--navy); letter-spacing: -1px; line-height: 1.15; margin-bottom: 16px; }
+    .section-lead { font-size: 16px; color: var(--gray); max-width: 600px; line-height: 1.8; margin-bottom: 48px; }
+
+    /* ─── ABOUT ─── */
+    .about { background: white; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-text p { font-size: 15.5px; color: var(--gray); line-height: 1.85; margin-bottom: 18px; }
+    .about-text p strong { color: var(--text); font-weight: 600; }
+    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 36px; padding-top: 36px; border-top: 1px solid var(--border); }
+    .stat-num { font-size: 36px; font-weight: 900; color: var(--navy); letter-spacing: -1px; line-height: 1; }
+    .stat-num sup { font-size: 18px; }
+    .stat-lbl { font-size: 12px; color: var(--gray-lt); font-weight: 500; margin-top: 4px; letter-spacing: 0.3px; }
+    .quote-card { background: var(--navy); border-radius: 12px; padding: 40px 36px; position: relative; overflow: hidden; }
+    .quote-card::before { content: '\201C'; position: absolute; top: -10px; left: 20px; font-size: 120px; color: rgba(255,255,255,0.05); font-family: Georgia, serif; line-height: 1; }
+    .quote-card blockquote { font-size: 22px; font-weight: 700; color: white; line-height: 1.45; margin-bottom: 20px; position: relative; }
+    .quote-card cite { font-style: normal; font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 500; }
+    .press-row { margin-top: 32px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .press-row p { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 14px; }
+    .press-names { display: flex; flex-wrap: wrap; gap: 8px; }
+    .press-tag { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.06); border-radius: 4px; padding: 4px 10px; font-style: italic; }
+
+    /* ─── RESPONSIBILITIES two-col list ─── */
+    .role-detail { background: var(--off-white); }
+    .resp-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .resp-card {
+      background: white; border: 1px solid var(--border); border-radius: 10px; padding: 22px 22px 20px;
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    .resp-card-icon {
+      width: 36px; height: 36px; border-radius: 8px; background: rgba(7,35,100,0.07);
+      display: grid; place-items: center; flex-shrink: 0; margin-top: 1px;
+    }
+    .resp-card-text { font-size: 14.5px; color: #374151; line-height: 1.6; }
+
+    /* ─── QUALIFICATIONS ─── */
+    .quals { background: var(--navy-deep); }
+    .quals .eyebrow { color: #4ade80; }
+    .quals h2.section-title { color: white; }
+    .quals .section-lead { color: rgba(255,255,255,0.55); }
+    .quals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .quals-col { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 28px; }
+    .quals-col h3 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .quals-list { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+    .quals-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; }
+    .q-bullet { flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%; background: rgba(19,105,73,0.25); border: 1px solid rgba(19,105,73,0.5); display: grid; place-items: center; margin-top: 2px; }
+    .q-bullet svg { width: 9px; height: 9px; }
+
+    /* ─── WHY THIS ROLE ─── */
+    .why-role {
+      background: var(--green); padding: 64px 48px;
+    }
+    .why-inner {
+      max-width: 980px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+    .why-text h2 { font-size: clamp(26px, 3vw, 36px); font-weight: 900; color: white; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 16px; }
+    .why-text p { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.75; }
+    .why-points { display: flex; flex-direction: column; gap: 20px; }
+    .why-point { display: flex; align-items: flex-start; gap: 14px; }
+    .why-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.5); flex-shrink: 0; margin-top: 6px; }
+    .why-point-text h4 { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; }
+    .why-point-text p { font-size: 13.5px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+    /* ─── BENEFITS ─── */
+    .benefits { background: var(--sand); }
+    .benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .benefit-card { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 22px 18px; display: flex; align-items: center; gap: 14px; transition: box-shadow 0.2s; }
+    .benefit-card:hover { box-shadow: 0 4px 16px rgba(7,35,100,0.08); }
+    .benefit-icon { font-size: 24px; flex-shrink: 0; width: 44px; height: 44px; background: rgba(7,35,100,0.05); border-radius: 8px; display: grid; place-items: center; }
+    .benefit-name { font-size: 13.5px; font-weight: 600; color: var(--navy); line-height: 1.4; }
+    .benefit-sub { font-size: 12px; color: var(--gray-lt); margin-top: 2px; }
+
+    /* ─── APPLY ─── */
+    .apply { background: white; }
+    .apply-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+    .apply-inner h2.section-title { color: var(--navy); }
+    .apply-inner .section-lead { max-width: 100%; margin-bottom: 36px; }
+    .apply-steps { display: flex; flex-direction: column; gap: 12px; text-align: left; margin-bottom: 40px; background: var(--off-white); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+    .apply-step { display: flex; align-items: flex-start; gap: 14px; font-size: 14px; color: #374151; line-height: 1.6; }
+    .step-num { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--navy); color: white; font-size: 12px; font-weight: 700; display: grid; place-items: center; margin-top: 1px; }
+    .apply-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-main { background: var(--navy); color: white; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background 0.15s; }
+    .btn-main:hover { background: var(--navy-mid); }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--navy-deep); padding: 48px; }
+    .footer-inner { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+    .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; margin-top: 12px; max-width: 280px; }
+    .footer-brand .footer-logo { display: flex; align-items: center; gap: 9px; }
+    .footer-s { width: 28px; height: 28px; background: var(--green); border-radius: 4px; display: grid; place-items: center; font-weight: 900; font-size: 16px; color: white; font-style: italic; }
+    .footer-wordmark { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); }
+    .footer-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 14px; }
+    .footer-col a, .footer-col p { display: block; font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; line-height: 2; transition: color 0.15s; }
+    .footer-col a:hover { color: rgba(255,255,255,0.9); }
+    .footer-bottom { max-width: 980px; margin: 32px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      section { padding: 56px 24px; }
+      .hero { padding: 64px 24px; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .resp-cols { grid-template-columns: 1fr; }
+      .quals-grid { grid-template-columns: 1fr; }
+      .why-inner { grid-template-columns: 1fr; gap: 40px; }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 6px; }
+      footer { padding: 40px 24px; }
+      .why-role { padding: 48px 24px; }
+    }
+    @media (max-width: 560px) {
+      .benefits-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="https://syn-grp.com/">
+    <div class="nav-s">S</div>
+    <span class="nav-wordmark">Synergy Construction</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="https://syn-grp.com/projects/">Projects</a></li>
+      <li><a href="https://syn-grp.com/about/">About</a></li>
+      <li><a href="https://syn-grp.com/news/">News</a></li>
+      <li><a href="https://syn-grp.com/careers/">Careers</a></li>
+    </ul>
+    <a class="nav-apply" href="mailto:info@syn-grp.com?subject=Administrative Assistant Application">Apply Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <span>Now Hiring · Chicago, IL</span>
+      </div>
+      <h1>Be the first impression at</h1>
+      <div class="hero-role-line">Synergy Construction</div>
+      <p class="hero-desc">
+        This is a key role — often the first interaction clients, subcontractors, and partners have with our company. You'll keep the office running, support our leadership team, and help create a professional, welcoming experience every day.
+      </p>
+      <div class="hero-pills">
+        <span class="pill">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Chicago, IL (West Town) · Onsite
+        </span>
+        <span class="pill">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          Full-Time
+        </span>
+        <span class="pill">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          Office &amp; Admin Background
+        </span>
+        <span class="pill">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          Competitive Salary + Full Benefits
+        </span>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3>Ready to apply?</h3>
+      <p>Send your resume and your project list. We review every submission personally.</p>
+      <a class="card-cta" href="mailto:info@syn-grp.com?subject=Administrative Assistant Application – [Your Name]">
+        Email Application
+      </a>
+      <div class="card-detail">
+        <div class="card-detail-row">
+          <span class="lbl">Location</span>
+          <span class="val">Chicago, IL (West Town)</span>
+        </div>
+        <div class="card-detail-row">
+          <span class="lbl">Type</span>
+          <span class="val">Full-Time</span>
+        </div>
+        <div class="card-detail-row">
+          <span class="lbl">Team</span>
+          <span class="val">Administration</span>
+        </div>
+        <div class="card-detail-row">
+          <span class="lbl">Reports to</span>
+          <span class="val">Office Leadership</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="eyebrow">About Synergy</p>
+        <h2 class="section-title">Great work starts with great people</h2>
+        <p>
+          Synergy Construction Group has been building across Chicagoland for over 16 years. As a General Contractor and Developer since 2009, our work spans <strong>multi-family housing, adaptive reuse, senior living, retail buildouts, and high-end interiors</strong> — big or small, commercial or residential.
+        </p>
+        <p>
+          We're proud of the reputation we've earned for being reliable, collaborative, and committed to delivering exceptional results. Our company is led by <strong>four hands-on owners</strong> who know the industry inside and out, backed by a team that genuinely enjoys working together.
+        </p>
+        <p>
+          With our main office in West Town, Chicago and a new satellite office in Lombard, we're continuing to grow — and we need a sharp, people-oriented administrator to help keep everything running.
+        </p>
+        <div class="stats-row">
+          <div>
+            <div class="stat-num">16<sup>+</sup></div>
+            <div class="stat-lbl">Years in Chicago</div>
+          </div>
+          <div>
+            <div class="stat-num">4</div>
+            <div class="stat-lbl">Hands-on owners</div>
+          </div>
+          <div>
+            <div class="stat-num">5</div>
+            <div class="stat-lbl">Market sectors</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="quote-card">
+          <blockquote>"Our employees work with us, not for us."</blockquote>
+          <cite>— Synergy Construction Group</cite>
+          <div class="press-row">
+            <p>As seen in</p>
+            <div class="press-names">
+              <span class="press-tag">New York Times</span>
+              <span class="press-tag">Crain's Chicago</span>
+              <span class="press-tag">Chicago Sun-Times</span>
+              <span class="press-tag">GlobeSt</span>
+              <span class="press-tag">Daily Herald</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLE DETAIL -->
+<section class="role-detail">
+  <div class="inner">
+    <p class="eyebrow">The Role</p>
+    <h2 class="section-title">What You'll Do</h2>
+    <p class="section-lead">You'll be the face and voice of Synergy — supporting day-to-day office operations and the basic accounting tasks that keep everything running smoothly. No two days are exactly the same.</p>
+
+    <div class="resp-cols">
+      <div class="resp-card">
+        <div class="resp-card-icon">
+          <svg width="18" height="18" fill="none" stroke="#072364" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.27 1.17 2 2 0 012.25 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        </div>
+        <span class="resp-card-text">Answer and route incoming calls; greet visitors professionally</span>
+      </div>
+      <div class="resp-card">
+        <div class="resp-card-icon">
+          <svg width="18" height="18" fill="none" stroke="#072364" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <span class="resp-card-text">Manage deliveries and incoming/outgoing mail</span>
+      </div>
+      <div class="resp-card">
+        <div class="resp-card-icon">
+          <svg width="18" height="18" fill="none" stroke="#072364" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <span class="resp-card-text">Enter invoices and assist with credit card reconciliation</span>
+      </div>
+      <div class="resp-card">
+        <div class="resp-card-icon">
+          <svg width="18" height="18" fill="none" stroke="#072364" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <span class="resp-card-text">Support basic accounting tasks with accuracy and timeliness</span>
+      </div>
+      <div class="resp-card">
+        <div class="resp-card-icon">
+          <svg width="18" height="18" fill="none" stroke="#072364" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        </div>
+        <span class="resp-card-text">Order and maintain office supplies</span>
+      </div>
+      <div class="resp-card">
+        <div class="resp-card-icon">
+          <svg width="18" height="18" fill="none" stroke="#072364" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <span class="resp-card-text">Assist subcontractors with waivers and documentation</span>
+      </div>
+      <div class="resp-card">
+        <div class="resp-card-icon">
+          <svg width="18" height="18" fill="none" stroke="#072364" stroke-width="2" viewBox="0 0 24 24"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+        </div>
+        <span class="resp-card-text">Keep files organized — digital and physical</span>
+      </div>
+      <div class="resp-card">
+        <div class="resp-card-icon">
+          <svg width="18" height="18" fill="none" stroke="#072364" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <span class="resp-card-text">Maintain common areas: kitchen, conference rooms</span>
+      </div>
+      <div class="resp-card">
+        <div class="resp-card-icon">
+          <svg width="18" height="18" fill="none" stroke="#072364" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <span class="resp-card-text">Support office events and general coordination</span>
+      </div>
+      <div class="resp-card">
+        <div class="resp-card-icon">
+          <svg width="18" height="18" fill="none" stroke="#072364" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+        </div>
+        <span class="resp-card-text">Provide administrative support to leadership</span>
+      </div>
+      <div class="resp-card">
+        <div class="resp-card-icon">
+          <svg width="18" height="18" fill="none" stroke="#072364" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <span class="resp-card-text">Notarize documents as needed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFICATIONS -->
+<section class="quals">
+  <div class="inner">
+    <p class="eyebrow">Who We're Looking For</p>
+    <h2 class="section-title">Qualifications</h2>
+    <p class="section-lead">If you enjoy variety, staying organized, and being the go-to person in the office, we'd love to connect.</p>
+    <div class="quals-grid">
+      <div class="quals-col">
+        <h3>What You Bring</h3>
+        <ul class="quals-list">
+          <li>
+            <div class="q-bullet"><svg viewBox="0 0 10 10" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="2 5 4 7 8 3"/></svg></div>
+            Experience in office administration, reception, or a similar role
+          </li>
+          <li>
+            <div class="q-bullet"><svg viewBox="0 0 10 10" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="2 5 4 7 8 3"/></svg></div>
+            Exposure to invoicing, reconciliation, or basic financial admin tasks
+          </li>
+          <li>
+            <div class="q-bullet"><svg viewBox="0 0 10 10" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="2 5 4 7 8 3"/></svg></div>
+            Strong organization and attention to detail
+          </li>
+          <li>
+            <div class="q-bullet"><svg viewBox="0 0 10 10" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="2 5 4 7 8 3"/></svg></div>
+            Clear, professional communication — written and verbal
+          </li>
+          <li>
+            <div class="q-bullet"><svg viewBox="0 0 10 10" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="2 5 4 7 8 3"/></svg></div>
+            Reliable, proactive, and team-oriented
+          </li>
+          <li>
+            <div class="q-bullet"><svg viewBox="0 0 10 10" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="2 5 4 7 8 3"/></svg></div>
+            Friendly, helpful attitude — you set the tone for the office
+          </li>
+        </ul>
+      </div>
+      <div class="quals-col">
+        <h3>Nice to Have</h3>
+        <ul class="quals-list">
+          <li>
+            <div class="q-bullet"><svg viewBox="0 0 10 10" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="2 5 4 7 8 3"/></svg></div>
+            Experience in a construction or real estate environment (preferred)
+          </li>
+          <li>
+            <div class="q-bullet"><svg viewBox="0 0 10 10" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="2 5 4 7 8 3"/></svg></div>
+            Familiarity with subcontractor documentation and lien waivers
+          </li>
+          <li>
+            <div class="q-bullet"><svg viewBox="0 0 10 10" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="2 5 4 7 8 3"/></svg></div>
+            Notary Public certification (or willingness to obtain)
+          </li>
+          <li>
+            <div class="q-bullet"><svg viewBox="0 0 10 10" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="2 5 4 7 8 3"/></svg></div>
+            Experience with accounting software or office management tools
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY THIS ROLE -->
+<div class="why-role">
+  <div class="why-inner">
+    <div class="why-text">
+      <h2>Why This Role Matters</h2>
+      <p>You're the front door to our company — and a key support to our internal operations. Your work directly impacts how we show up every day, both externally and internally.</p>
+    </div>
+    <div class="why-points">
+      <div class="why-point">
+        <div class="why-dot"></div>
+        <div class="why-point-text">
+          <h4>You set the first impression</h4>
+          <p>Clients, subcontractors, and partners meet Synergy through you. The tone you set matters.</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-dot"></div>
+        <div class="why-point-text">
+          <h4>Variety every day</h4>
+          <p>From phones to invoices to events — no two days are identical. If you thrive on staying organized across different tasks, you'll fit right in.</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-dot"></div>
+        <div class="why-point-text">
+          <h4>A team that values you</h4>
+          <p>We're a people-first company. Our four hands-on owners know every team member by name — and your contribution is visible and appreciated.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="inner">
+    <p class="eyebrow">Compensation &amp; Benefits</p>
+    <h2 class="section-title">What we offer</h2>
+    <p class="section-lead">Competitive salary based on experience, plus a full benefits package at a company where your work actually matters.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🏥</div>
+        <div><div class="benefit-name">Medical Insurance</div><div class="benefit-sub">Comprehensive health coverage</div></div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🦷</div>
+        <div><div class="benefit-name">Dental &amp; Vision</div><div class="benefit-sub">Full family coverage available</div></div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🛡️</div>
+        <div><div class="benefit-name">Life Insurance</div><div class="benefit-sub">Company-provided coverage</div></div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💰</div>
+        <div><div class="benefit-name">401(k) Plan</div><div class="benefit-sub">Retirement savings program</div></div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🌴</div>
+        <div><div class="benefit-name">PTO &amp; Holidays</div><div class="benefit-sub">Paid time off + sick leave</div></div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📈</div>
+        <div><div class="benefit-name">Career Growth</div><div class="benefit-sub">Real opportunities to grow</div></div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🎟️</div>
+        <div><div class="benefit-name">Employee Discounts</div><div class="benefit-sub">Exclusive partner perks</div></div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🎉</div>
+        <div><div class="benefit-name">Corporate Outings</div><div class="benefit-sub">Team events &amp; celebrations</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section class="apply">
+  <div class="apply-inner">
+    <p class="eyebrow">Apply</p>
+    <h2 class="section-title">Ready to be the go-to person?</h2>
+    <p class="section-lead">Send your resume and a brief note about your background. We review every submission personally.</p>
+    <div class="apply-steps">
+      <div class="apply-step">
+        <div class="step-num">1</div>
+        Email your resume to <strong>info@syn-grp.com</strong> with subject line: <em>Administrative Assistant Application – [Your Name]</em>
+      </div>
+      <div class="apply-step">
+        <div class="step-num">2</div>
+        Include a short note about your office or administrative background and what draws you to this role
+      </div>
+      <div class="apply-step">
+        <div class="step-num">3</div>
+        We'll follow up within a few business days to schedule an initial conversation
+      </div>
+    </div>
+    <div class="apply-actions">
+      <a class="btn-main" href="mailto:info@syn-grp.com?subject=Administrative Assistant Application – [Your Name]">
+        Send Application
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-s">S</div>
+        <span class="footer-wordmark">Synergy Construction Group</span>
+      </div>
+      <p>Chicago's general contractor for high-impact construction. Offices in West Town, Chicago and Lombard, IL.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Open Roles</h4>
+      <a href="pm-hiring.html">Project Manager</a>
+      <a href="superintendent.html">Superintendent</a>
+      <a href="admin-hiring.html">Administrative Assistant</a>
+      <a href="https://syn-grp.com/careers/">All Careers</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:info@syn-grp.com">info@syn-grp.com</a>
+      <p>West Town, Chicago, IL<br>Lombard, IL (satellite)</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Synergy Construction Group, LLC.</span>
+    <span>Administrative Assistant · Open Position</span>
+  </div>
+</footer>
+
+</body>
+</html>
