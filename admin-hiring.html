@@ -15,12 +15,12 @@
       --navy-deep: #041540;
       --green:     #136949;
       --green-lt:  #1a8a5e;
-      --sand:      #f7f5f0;
-      --off-white: #fafafa;
-      --border:    #e4e7ed;
-      --gray:      #6b7280;
-      --gray-lt:   #9ca3af;
-      --text:      #111827;
+      --sand:      #efefef;
+      --off-white: #ffffff;
+      --border:    #e2e0dc;
+      --gray:      #403f3f;
+      --gray-lt:   #8a8888;
+      --text:      #2d2c2c;
     }
 
     html { scroll-behavior: smooth; }
@@ -37,12 +37,7 @@
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
     .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-s {
-      width: 30px; height: 30px; background: var(--green); border-radius: 5px;
-      display: grid; place-items: center; font-weight: 900; font-size: 17px;
-      color: white; letter-spacing: -1px; font-style: italic;
-    }
-    .nav-wordmark { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.9); letter-spacing: 0.3px; }
+    .nav-logo { height: 32px; width: auto; display: block; }
     .nav-right { display: flex; align-items: center; gap: 24px; }
     .nav-links { list-style: none; display: flex; gap: 22px; }
     .nav-links a {
@@ -219,8 +214,7 @@
     .footer-inner { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
     .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; margin-top: 12px; max-width: 280px; }
     .footer-brand .footer-logo { display: flex; align-items: center; gap: 9px; }
-    .footer-s { width: 28px; height: 28px; background: var(--green); border-radius: 4px; display: grid; place-items: center; font-weight: 900; font-size: 16px; color: white; font-style: italic; }
-    .footer-wordmark { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); }
+    .footer-logo img { height: 34px; width: auto; display: block; }
     .footer-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 14px; }
     .footer-col a, .footer-col p { display: block; font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; line-height: 2; transition: color 0.15s; }
     .footer-col a:hover { color: rgba(255,255,255,0.9); }
@@ -254,8 +248,7 @@
 <!-- NAV -->
 <nav>
   <a class="nav-brand" href="https://syn-grp.com/">
-    <div class="nav-s">S</div>
-    <span class="nav-wordmark">Synergy Construction</span>
+    <img class="nav-logo" src="assets/synergy-logo.svg" alt="Synergy Construction Group">
   </a>
   <div class="nav-right">
     <ul class="nav-links">
@@ -630,8 +623,7 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="footer-logo">
-        <div class="footer-s">S</div>
-        <span class="footer-wordmark">Synergy Construction Group</span>
+        <img src="assets/synergy-logo.svg" alt="Synergy Construction Group">
       </div>
       <p>Chicago's general contractor for high-impact construction. Offices in West Town, Chicago and Lombard, IL.</p>
     </div>

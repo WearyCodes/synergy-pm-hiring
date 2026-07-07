@@ -11,7 +11,7 @@
     :root {
       --navy: #072364; --navy-deep: #041540; --navy-mid: #0d3080;
       --green: #136949; --green-lt: #1a8a5e;
-      --sand: #f7f5f0; --border: #e4e7ed; --gray: #6b7280; --text: #111827;
+      --sand: #efefef; --border: #e2e0dc; --gray: #403f3f; --text: #2d2c2c;
     }
     body { font-family: 'Inter', sans-serif; background: var(--sand); color: var(--text); min-height: 100vh; }
 
@@ -20,8 +20,7 @@
       display: flex; align-items: center; justify-content: space-between; padding: 0 48px;
     }
     .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-s { width: 30px; height: 30px; background: var(--green); border-radius: 5px; display: grid; place-items: center; font-weight: 900; font-size: 17px; color: white; font-style: italic; }
-    .nav-wordmark { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.9); }
+    .nav-logo { height: 32px; width: auto; display: block; }
 
     .hero-band {
       background: var(--navy); padding: 64px 48px; text-align: center;
@@ -66,8 +65,7 @@
 
 <nav>
   <a class="nav-brand" href="https://syn-grp.com/">
-    <div class="nav-s">S</div>
-    <span class="nav-wordmark">Synergy Construction Group</span>
+    <img class="nav-logo" src="assets/synergy-logo.svg" alt="Synergy Construction Group">
   </a>
 </nav>
 
